@@ -70,3 +70,34 @@ export interface DashboardStats {
   recentOrders: Order[];
   topProducts: Product[];
 }
+
+export type WeatherType = 'sunny' | 'rain' | 'heat' | 'wind';
+
+export interface WeatherEffect {
+  gatherEfficiency: number;
+  mapEventRate: number;
+  shelterDamage: number;
+  waterConsumption: number;
+  foodConsumption: number;
+}
+
+export interface Weather {
+  type: WeatherType;
+  name: string;
+  icon: string;
+  description: string;
+  effect: WeatherEffect;
+}
+
+export interface WeatherForecast {
+  day: number;
+  weather: WeatherType;
+  date: string;
+}
+
+export interface Shelter {
+  level: number;
+  durability: number;
+  maxDurability: number;
+  built: boolean;
+}
